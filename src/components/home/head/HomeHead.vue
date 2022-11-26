@@ -3,12 +3,16 @@
         <div class="head-title">OA办公后台管理系统</div>
         <vertical-button class="index-button" text="首页" :icon="HomeFilled"></vertical-button>
         <vertical-button class="app-center-button" text="应用中心" :icon="Menu"></vertical-button>
-        <!-- <el-button class="head-button">应用中心</el-button> -->
+        <el-input class="search-input" placeholder="请输入关键字">
+            <template #prefix>
+                <el-icon size="20"><search /></el-icon>
+            </template>
+        </el-input>
     </div>    
 </template>
 
 <script setup lang="ts">
-    import {HomeFilled, Menu} from '@element-plus/icons-vue'
+    import {HomeFilled, Menu, Search} from '@element-plus/icons-vue'
     import VerticalButton from '../../uitls/VerticalButton.vue';
 
 </script>
@@ -36,7 +40,7 @@
 }
 
 .index-button {
-    width: 120px;
+    width: 100px;
     height: 100%;
     position: absolute;
     top: 0px;
@@ -58,11 +62,11 @@
 }
 
 .app-center-button {
-    width: 120px;
+    width: 100px;
     height: 100%;
     position: absolute;
     top: 0px;
-    left: 370px;
+    left: 340px;
     font-size: 14px;
     font-weight: 500;
     color: white;
@@ -79,4 +83,21 @@
     border-bottom: 4px solid white;
 }
 
+.search-input {
+    width: 25%;
+    height: 44px;
+    min-width: 300px;
+    position: absolute;
+    top: 10px;
+    left: 480px;
+}
+
+.search-input :deep(.el-input__wrapper) {
+    /* border: 0.2px solid transparent; */
+    border-radius: 10px;
+}
+
+.search-input :deep(.el-input__inner)::placeholder {
+    color: #CCCCCC;
+}
 </style>
