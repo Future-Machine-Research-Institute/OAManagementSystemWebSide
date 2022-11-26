@@ -41,4 +41,8 @@ import { defineComponent, DefineComponent } from 'vue';
     flex-direction: column;
 }
 
+.el-button {
+    background-color: transparent;
+}
+
 </style>

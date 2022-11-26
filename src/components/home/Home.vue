@@ -22,10 +22,12 @@
 .common-layout {
     width: 100%;
     height: 100%;
+    overflow: auto;
 }
 
 .header {
     width: 100%;
+    min-width: 1200px;
     height: 64px;
     padding: 0px;
 }
