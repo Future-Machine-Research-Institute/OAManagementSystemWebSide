@@ -1,16 +1,15 @@
 <template>
     <div class="head-container">
         <div class="head-title">OA办公后台管理系统</div>
-        <el-button class="head-button">
-            <el-icon color="white" :size="20"><HomeFilled /></el-icon>
-            <div style="color:white;margin-top: 5px;">首页</div>
-        </el-button>
+        <vertical-button class="index-button" text="首页" :icon="HomeFilled"></vertical-button>
+        <vertical-button class="app-center-button" text="应用中心" :icon="Menu"></vertical-button>
         <!-- <el-button class="head-button">应用中心</el-button> -->
     </div>    
 </template>
 
 <script setup lang="ts">
-    import {HomeFilled} from '@element-plus/icons-vue'
+    import {HomeFilled, Menu} from '@element-plus/icons-vue'
+    import VerticalButton from '../../uitls/VerticalButton.vue';
 
 </script>
 
@@ -36,34 +35,48 @@
     color: white;
 }
 
-.head-button {
+.index-button {
     width: 120px;
     height: 100%;
-    padding: 0px;
     position: absolute;
     top: 0px;
     left: 220px;
-    border-radius: 0px;
-    border-width: 0px;
-    /* color: white; */
     font-size: 14px;
     font-weight: 500;
+    color: white;
     background-color: #2561ef;
 }
 
-.head-button :deep(span) {
-    flex-direction: column;
-}
-
-.head-button:hover {
+.index-button:hover {
     background-color: #134ade;
     border-bottom: 4px solid white;
 }
 
-.head-button:focus {
+.index-button:focus {
     background-color: #134ade;
     border-bottom: 4px solid white;
 }
 
+.app-center-button {
+    width: 120px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 370px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    background-color: #2561ef;
+}
+
+.app-center-button:hover {
+    background-color: #134ade;
+    border-bottom: 4px solid white;
+}
+
+.app-center-button:focus {
+    background-color: #134ade;
+    border-bottom: 4px solid white;
+}
 
 </style>

@@ -18,5 +18,6 @@ declare module '@vue/runtime-core' {
     HomeHead: typeof import('./src/components/home/head/HomeHead.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    VerticalButton: typeof import('./src/components/uitls/VerticalButton.vue')['default']
   }
 }
