@@ -22,14 +22,16 @@
             <el-button class="set-button">重置密码</el-button>
             <el-button class="set-button">退出系统</el-button>
         </el-popover>
-        <el-popover class="app-center-popover" ref="appCenterPopoverRef" :virtual-ref="appCenterButtonRef" trigger="click" virtual-triggering :show-arrow="false">
-            <div class="app-center-container"></div>
+        <el-popover class="app-center-popover" ref="appCenterPopoverRef" :virtual-ref="appCenterButtonRef" trigger="click" virtual-triggering :show-arrow="false" width="546px">
+            <el-space class="app-center-space" :size="10"  wrap>
+                <vertical-button class="app-item-button" v-for="item in appItemArray" :text="item.text" :icon="item.icon" :icon-color="item.iconColor" :icon-size="25" :text-icon-padding="20"></vertical-button>
+            </el-space>
         </el-popover>
     </div>    
 </template>
 
 <script setup lang="ts">
-    import {HomeFilled, Grid, Search, BellFilled, CaretBottom} from '@element-plus/icons-vue'
+    import {HomeFilled, Grid, Search, BellFilled, CaretBottom, Share, UserFilled, Checked, WalletFilled, Coin, List, PhoneFilled, Promotion, Platform, Van, Tickets, Memo, DocumentCopy, Management, Money, Tools} from '@element-plus/icons-vue'
     import VerticalButton from '../../uitls/VerticalButton.vue';
     import { ref } from 'vue';
 
@@ -38,6 +40,89 @@
 
     const appCenterButtonRef = ref()
     const appCenterPopoverRef = ref()
+
+    const appItemArray = [
+        {
+            icon: Share,
+            iconColor: "#6c76f4",
+            text: "组织"
+        },
+        {
+            icon: UserFilled,
+            iconColor: "#28d094",
+            text: "员工"
+        },
+        {
+            icon: Checked,
+            iconColor: "#2561ef",
+            text: "考勤"
+        },
+        {
+            icon: WalletFilled,
+            iconColor: "#fa746b",
+            text: "薪酬"
+        },
+        {
+            icon: Coin,
+            iconColor: "#fddb78",
+            text: "社保公积金"
+        },
+        {
+            icon: List,
+            iconColor: "#fddb78",
+            text: "绩效"
+        },
+        {
+            icon: PhoneFilled,
+            iconColor: "#fa746b",
+            text: "招聘"
+        },
+        {
+            icon: Promotion,
+            iconColor: "#28d094",
+            text: "审批"
+        },
+        {
+            icon: Platform,
+            iconColor: "#6c76f4",
+            text: "会议室预定"
+        },
+        {
+            icon: Van,
+            iconColor: "#2561ef",
+            text: "车辆"
+        },
+        {
+            icon: Tickets,
+            iconColor: "#28d094",
+            text: "新闻"
+        },
+        {
+            icon: Memo,
+            iconColor: "#2561ef",
+            text: "公告"
+        },
+        {
+            icon: DocumentCopy,
+            iconColor: "#fa746b",
+            text: "合同库"
+        },
+        {
+            icon: Management,
+            iconColor: "#fddb78",
+            text: "文档库"
+        },
+        {
+            icon: Money,
+            iconColor: "#6c76f4",
+            text: "资产"
+        },
+        {
+            icon: Tools,
+            iconColor: "#fddb78",
+            text: "系统设置"
+        }
+    ]
 
 </script>
 
@@ -117,7 +202,6 @@
 }
 
 .search-input :deep(.el-input__wrapper) {
-    /* border: 0.2px solid transparent; */
     border-radius: 10px;
 }
 
@@ -173,15 +257,8 @@
     right: 200px;
 }
 
-/* .set-popover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 .set-button {
     width: 100%;
-    /* padding: 0px; */
     border-radius: 0px;
     border-width: 0px;
     margin: 0 auto;
@@ -190,6 +267,22 @@
 
 .set-button:hover {
     color: #2561EF;
+}
+
+.app-center-space :deep(.el-space__item) {
+    margin-left: 10px;
+}
+
+.app-item-button {
+    width: 84px;
+    height: 84px;
+    font-size: 14px;
+    color: black;
+}
+
+.app-item-button:hover {
+    background-color: #eef3fe;
+    border-radius: 8px;
 }
 
 </style>
