@@ -2,7 +2,7 @@
     <div class="head-container">
         <div class="head-title">OA办公后台管理系统</div>
         <vertical-button class="index-button" text="首页" :icon="HomeFilled"></vertical-button>
-        <vertical-button class="app-center-button" text="应用中心" :icon="Grid"></vertical-button>
+        <vertical-button class="app-center-button" ref="appCenterButtonRef" text="应用中心" :icon="Grid"></vertical-button>
         <el-input class="search-input" placeholder="请输入关键字">
             <template #prefix>
                 <el-icon size="20"><search /></el-icon>
@@ -13,17 +13,31 @@
                 <vertical-button :icon="BellFilled" :text-icon-padding="0"></vertical-button>
             </el-badge>
             <el-avatar class="avatar" shape="square" :size="40"/>
-            <el-button class="name-button">
+            <el-button class="name-button" ref="nameButtonRef">
                 <div class="name-text">Arrose</div>
                 <el-icon class="name-arrow"><CaretBottom /></el-icon>
             </el-button>
         </div>
+        <el-popover class="set-popover" ref="setPopoverRef" :virtual-ref="nameButtonRef" trigger="click" virtual-triggering :show-arrow="false">
+            <el-button class="set-button">重置密码</el-button>
+            <el-button class="set-button">退出系统</el-button>
+        </el-popover>
+        <el-popover class="app-center-popover" ref="appCenterPopoverRef" :virtual-ref="appCenterButtonRef" trigger="click" virtual-triggering :show-arrow="false">
+            <div class="app-center-container"></div>
+        </el-popover>
     </div>    
 </template>
 
 <script setup lang="ts">
     import {HomeFilled, Grid, Search, BellFilled, CaretBottom} from '@element-plus/icons-vue'
     import VerticalButton from '../../uitls/VerticalButton.vue';
+    import { ref } from 'vue';
+
+    const nameButtonRef = ref()
+    const setPopoverRef = ref()
+
+    const appCenterButtonRef = ref()
+    const appCenterPopoverRef = ref()
 
 </script>
 
@@ -112,7 +126,7 @@
 }
 
 .information-menu {
-    width: 200px;
+    width: 220px;
     height: 64px;
     position: absolute;
     top: 0px;
@@ -131,6 +145,10 @@
     border-radius: 0px;
     border-width: 0px;
     background-color: transparent;
+}
+
+.name-text {
+    font-weight: bold;
 }
 
 .name-arrow {
@@ -152,7 +170,26 @@
     height: 32px;
     position: absolute;
     top: 16px;
-    right: 180px;
+    right: 200px;
+}
+
+/* .set-popover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.set-button {
+    width: 100%;
+    /* padding: 0px; */
+    border-radius: 0px;
+    border-width: 0px;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.set-button:hover {
+    color: #2561EF;
 }
 
 </style>

@@ -27,7 +27,7 @@
 
 .header {
     width: 100%;
-    min-width: 1200px;
+    min-width: 1080px;
     height: 64px;
     padding: 0px;
 }

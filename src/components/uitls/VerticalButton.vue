@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, DefineComponent } from 'vue';
+    import { defineComponent, DefineComponent } from 'vue';
 
     export interface Props {
         text?: string
