@@ -19,6 +19,18 @@
 
 <style scoped>
 
+@media (min-width: 1024px) {
+  .aside {
+    display: block;
+  }
+}
+
+@media (max-width: 1023px) {
+  .aside {
+    display: none;
+  }
+}
+
 .common-layout {
     width: 100%;
     height: 100%;
@@ -27,7 +39,7 @@
 
 .header {
     width: 100%;
-    min-width: 1080px;
+    min-width: 280px;
     height: 64px;
     padding: 0px;
 }

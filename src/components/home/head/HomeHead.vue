@@ -1,5 +1,6 @@
 <template>
     <div class="head-container">
+        <vertical-button class="menu-button" :icon="Menu" :text-icon-padding="0"></vertical-button>
         <div class="head-title">OA办公后台管理系统</div>
         <vertical-button class="index-button" text="首页" :icon="HomeFilled"></vertical-button>
         <vertical-button class="app-center-button" ref="appCenterButtonRef" text="应用中心" :icon="Grid"></vertical-button>
@@ -31,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-    import {HomeFilled, Grid, Search, BellFilled, CaretBottom, Share, UserFilled, Checked, WalletFilled, Coin, List, PhoneFilled, Promotion, Platform, Van, Tickets, Memo, DocumentCopy, Management, Money, Tools} from '@element-plus/icons-vue'
+    import {Menu, HomeFilled, Grid, Search, BellFilled, CaretBottom, Share, UserFilled, Checked, WalletFilled, Coin, List, PhoneFilled, Promotion, Platform, Van, Tickets, Memo, DocumentCopy, Management, Money, Tools} from '@element-plus/icons-vue'
     import VerticalButton from '../../uitls/VerticalButton.vue';
     import { ref } from 'vue';
 
@@ -128,11 +129,55 @@
 
 <style scoped>
 
+@media (min-width: 1024px) {
+  .head-title {
+    display: block;
+  }
+  .index-button {
+    display: block;
+  }
+  .app-center-button {
+    display: block;
+  }
+  .search-input {
+    display: inline-flex;
+  }
+  .menu-button {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .head-title {
+    display: none;
+  }
+  .index-button {
+    display: none;
+  }
+  .app-center-button {
+    display: none;
+  }
+  .search-input {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
+}
+
 .head-container {
     width: 100%;
     height: 100%;
     background-color: #2561EF;
     position: relative;
+}
+
+.menu-button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 12px;
+    left: 20px;
 }
 
 .head-title {
