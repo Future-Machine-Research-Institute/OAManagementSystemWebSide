@@ -7,6 +7,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AddressBookFieldDisplay: typeof import('./src/components/home/main/organization/set-up/AddressBookFieldDisplay.vue')['default']
+    Contacts: typeof import('./src/components/home/main/organization/organizational-structure/Contacts.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElBadge: typeof import('element-plus/es')['ElBadge']
@@ -25,12 +27,21 @@ declare module '@vue/runtime-core' {
     Home: typeof import('./src/components/home/Home.vue')['default']
     HomeAside: typeof import('./src/components/home/aside/HomeAside.vue')['default']
     HomeHead: typeof import('./src/components/home/head/HomeHead.vue')['default']
+    JobManagement: typeof import('./src/components/home/main/organization/position-system/JobManagement.vue')['default']
     OrganizationAside: typeof import('./src/components/home/aside/OrganizationAside.vue')['default']
+    OrganizationChart: typeof import('./src/components/home/main/organization/organizational-structure/OrganizationChart.vue')['default']
+    OrganizationManagement: typeof import('./src/components/home/main/organization/organizational-structure/OrganizationManagement.vue')['default']
+    OrganizationType: typeof import('./src/components/home/main/organization/set-up/OrganizationType.vue')['default']
+    PositionCategory: typeof import('./src/components/home/main/organization/position-system/PositionCategory.vue')['default']
+    PositionManagement: typeof import('./src/components/home/main/organization/position-system/PositionManagement.vue')['default']
+    RankManagement: typeof import('./src/components/home/main/organization/position-system/RankManagement.vue')['default']
+    RoleManagement: typeof import('./src/components/home/main/organization/RoleManagement.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Schedule: typeof import('./src/components/home/main/index/Schedule.vue')['default']
     UnlimitedMenus: typeof import('./src/components/uitls/UnlimitedMenus.vue')['default']
     VerticalButton: typeof import('./src/components/uitls/VerticalButton.vue')['default']
     WorkBench: typeof import('./src/components/home/main/index/WorkBench.vue')['default']
+    WorkPlace: typeof import('./src/components/home/main/organization/organizational-structure/WorkPlace.vue')['default']
   }
 }

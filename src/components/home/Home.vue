@@ -6,7 +6,7 @@
         </el-header>
         <el-container class="content">
             <el-aside class="aside" width="200px">
-              <home-aside :menu-items="testArray" :default-path="'/home/index/workBench'"></home-aside>
+              <home-aside :menu-items="testArray" :default-path="'/home/index/work-bench'"></home-aside>
             </el-aside>
             <el-main>
               <router-view></router-view>
@@ -21,12 +21,13 @@
   import HomeAside from './aside/HomeAside.vue'
   import { useRouter } from 'vue-router';
   import {Monitor, Document} from '@element-plus/icons-vue'
+  import {reactive } from 'vue'
 
-  const testArray = [
+  let testArray = [
     {
       icon: Monitor,
       text: '工作台',
-      path: '/home/index/workBench',
+      path: '/home/index/work-bench',
       children: []
     },
     {
@@ -39,10 +40,12 @@
 
   const router = useRouter()
 
-  router.replace('/home/index/workBench')
+  router.replace('/home/index/work-bench')
 
-  const clickOnAppItem = (menus: Array<object>) => {
+  const clickOnAppItem = (menus: any[]) => {
     console.log(menus)
+    // testArray.value = menus
+    // testArray.push(...menus)
   }
 
 </script>

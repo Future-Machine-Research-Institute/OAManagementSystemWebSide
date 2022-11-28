@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-    import {Menu, HomeFilled, Grid, Search, BellFilled, CaretBottom, Share, UserFilled, Checked, WalletFilled, Coin, List, PhoneFilled, Promotion, Platform, Van, Tickets, Memo, DocumentCopy, Management, Money, Tools} from '@element-plus/icons-vue'
+    import {Document, Menu, HomeFilled, Grid, Search, BellFilled, CaretBottom, Share, UserFilled, Checked, WalletFilled, Coin, List, PhoneFilled, Promotion, Platform, Van, Tickets, Memo, DocumentCopy, Management, Money, Tools} from '@element-plus/icons-vue'
     import VerticalButton from '../../uitls/VerticalButton.vue';
     import { ref } from 'vue';
 
@@ -51,7 +51,95 @@
             icon: Share,
             iconColor: "#6c76f4",
             text: "组织",
-            menus: []
+            menus: [
+                {
+                    icon: Document,
+                    text: '组织架构',
+                    path: '/home/organization/organizational-structure',
+                    children: [
+                        {
+                            icon: null,
+                            text: '通讯录',
+                            path: '/home/organization/organizational-structure/contacts',
+                            children: []
+                        },
+                        {
+                            icon: null,
+                            text: '组织管理',
+                            path: '/home/organization/organizational-structure/organization-management',
+                            children: []
+                        },
+                        {
+                            icon: null,
+                            text: '组织架构图',
+                            path: '/home/organization/organizational-structure/organization-chart',
+                            children: []
+                        },
+                        {
+                            icon: null,
+                            text: '工作地点',
+                            path: '/home/organization/organizational-structure/work-place',
+                            children: []
+                        }
+                    ]
+                },
+                {
+                    icon: Document,
+                    text: '职位体系',
+                    path: '/home/organization/position-system',
+                    children: [
+                        {
+                            icon: null,
+                            text: '职位管理',
+                            path: '/home/organization/position-system/position-management',
+                            children: []
+                        },
+                        {
+                            icon: null,
+                            text: '职务管理',
+                            path: '/home/organization/position-system/job-management',
+                            children: []
+                        },
+                        {
+                            icon: null,
+                            text: '职级管理',
+                            path: '/home/organization/position-system/rank-management',
+                            children: []
+                        },
+                        {
+                            icon: null,
+                            text: '职位类别',
+                            path: '/home/organization/position-system/position-category',
+                            children: []
+                        }
+                    ]
+                },
+                {
+                    icon: Document,
+                    text: '角色管理',
+                    path: '/home/organization/role-management',
+                    children: []
+                },
+                {
+                    icon: Document,
+                    text: '设置',
+                    path: '/home/organization/set-up',
+                    children: [
+                        {
+                            icon: null,
+                            text: '组织类型',
+                            path: '/home/organization/set-up/organization-type',
+                            children: []
+                        },
+                        {
+                            icon: null,
+                            text: '职位类别',
+                            path: '/home/organization/set-up/address-book-field-display',
+                            children: []
+                        }
+                    ]
+                }
+            ]
         },
         {
             icon: UserFilled,
