@@ -37,7 +37,7 @@
     import { ref } from 'vue';
 
     const emit = defineEmits<{
-        (e: 'clickOnAppItem', menus: Array<object>): void
+        (e: 'clickOnAppItem', menus: any[]): void
     }>()
 
     const nameButtonRef = ref()
@@ -51,14 +51,7 @@
             icon: Share,
             iconColor: "#6c76f4",
             text: "组织",
-            menus: [
-                {
-
-                },
-                {
-                    
-                }
-            ]
+            menus: []
         },
         {
             icon: UserFilled,

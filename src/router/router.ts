@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from '../components/home/Home.vue'
-import OrganizationAside from '../components/home/aside/OrganizationAside.vue'
-import EmployeeAside from '../components/home/aside/EmployeeAside.vue'
+import WorkBench from '../components/home/main/index/WorkBench.vue'
+import Schedule from '../components/home/main/index/Schedule.vue'
 
 const routes = [
     {
@@ -11,20 +11,19 @@ const routes = [
     {
         path: '/home',
         name: 'Home',
-        component: Home
+        component: Home,
+        children: [
+            {
+                path: 'index/workBench',
+                component: WorkBench
+            },
+            {
+                path: 'index/schedule',
+                component: Schedule
+            }
+        ]
     }
 ]
-
-// children: [
-        //     {
-        //         path: 'organization',
-        //         component: OrganizationAside
-        //     },
-        //     {
-        //         path: 'employee',
-        //         component: EmployeeAside
-        //     }
-        // ]
 
 const router = createRouter({
     history: createWebHistory(),

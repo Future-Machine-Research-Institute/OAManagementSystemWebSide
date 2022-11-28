@@ -1,5 +1,7 @@
 <template>
-    <div class="employee-aside-container">员工</div>
+    <div class="schedule-container">
+        日程待办
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -8,7 +10,7 @@
 
 <style scoped>
 
-.employee-aside-container {
+.schedule-container {
     width: 100%;
     height: 100%;
     background-color: bisque;

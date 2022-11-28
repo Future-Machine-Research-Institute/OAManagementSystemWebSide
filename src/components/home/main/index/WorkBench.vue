@@ -1,5 +1,7 @@
 <template>
-    <div class="organization-aside-container">组织</div>
+    <div class="workBench-container">
+        工作台
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -8,10 +10,10 @@
 
 <style scoped>
 
-.organization-aside-container {
+.workBench-container {
     width: 100%;
     height: 100%;
-    background-color: aqua;
+    background-color: blueviolet;
 }
 
 </style>

@@ -23,10 +23,14 @@ declare module '@vue/runtime-core' {
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     EmployeeAside: typeof import('./src/components/home/aside/EmployeeAside.vue')['default']
     Home: typeof import('./src/components/home/Home.vue')['default']
+    HomeAside: typeof import('./src/components/home/aside/HomeAside.vue')['default']
     HomeHead: typeof import('./src/components/home/head/HomeHead.vue')['default']
     OrganizationAside: typeof import('./src/components/home/aside/OrganizationAside.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Schedule: typeof import('./src/components/home/main/index/Schedule.vue')['default']
+    UnlimitedMenus: typeof import('./src/components/uitls/UnlimitedMenus.vue')['default']
     VerticalButton: typeof import('./src/components/uitls/VerticalButton.vue')['default']
+    WorkBench: typeof import('./src/components/home/main/index/WorkBench.vue')['default']
   }
 }
