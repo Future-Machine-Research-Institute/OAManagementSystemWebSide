@@ -1,19 +1,31 @@
 <template>
     <div class="common-layout">
       <el-container class="common-layout">
-      <el-header class="header">
-        <home-head></home-head>
-      </el-header>
-      <el-container class="content">
-        <el-aside class="aside" width="200px"></el-aside>
-        <el-main></el-main>
+        <el-header class="header">
+          <home-head @click-on-app-item="clickOnAppItem"></home-head>
+        </el-header>
+        <el-container class="content">
+            <el-aside class="aside" width="200px">
+              <home-aside></home-aside>
+            </el-aside>
+            <el-main>
+              <!-- <router-view></router-view> -->
+            </el-main>
+        </el-container>
       </el-container>
-    </el-container>
     </div>
 </template>
 
 <script setup lang="ts">
   import HomeHead from './head/HomeHead.vue';
+  import HomeAside from './aside/HomeAside.vue'
+  import { useRouter } from 'vue-router';
+
+  const router = useRouter()
+
+  const clickOnAppItem = (menus: Array<object>) => {
+    console.log(menus)
+  }
 
 </script>
 

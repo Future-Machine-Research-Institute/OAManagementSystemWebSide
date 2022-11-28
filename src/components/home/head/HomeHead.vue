@@ -25,7 +25,7 @@
         </el-popover>
         <el-popover class="app-center-popover" ref="appCenterPopoverRef" :virtual-ref="appCenterButtonRef" trigger="click" virtual-triggering :show-arrow="false" width="546px">
             <el-space class="app-center-space" :size="10"  wrap>
-                <vertical-button class="app-item-button" v-for="item in appItemArray" :text="item.text" :icon="item.icon" :icon-color="item.iconColor" :icon-size="25" :text-icon-padding="20"></vertical-button>
+                <vertical-button class="app-item-button" v-for="item in appItemArray" @click="emit('clickOnAppItem', item.menus)" :text="item.text" :icon="item.icon" :icon-color="item.iconColor" :icon-size="25" :text-icon-padding="20"></vertical-button>
             </el-space>
         </el-popover>
     </div>    
@@ -35,6 +35,10 @@
     import {Menu, HomeFilled, Grid, Search, BellFilled, CaretBottom, Share, UserFilled, Checked, WalletFilled, Coin, List, PhoneFilled, Promotion, Platform, Van, Tickets, Memo, DocumentCopy, Management, Money, Tools} from '@element-plus/icons-vue'
     import VerticalButton from '../../uitls/VerticalButton.vue';
     import { ref } from 'vue';
+
+    const emit = defineEmits<{
+        (e: 'clickOnAppItem', menus: Array<object>): void
+    }>()
 
     const nameButtonRef = ref()
     const setPopoverRef = ref()
@@ -46,82 +50,135 @@
         {
             icon: Share,
             iconColor: "#6c76f4",
-            text: "组织"
+            text: "组织",
+            menus: [
+                {
+
+                },
+                {
+                    
+                }
+            ]
         },
         {
             icon: UserFilled,
             iconColor: "#28d094",
-            text: "员工"
+            text: "员工",
+            menus: [
+                
+            ]
         },
         {
             icon: Checked,
             iconColor: "#2561ef",
-            text: "考勤"
+            text: "考勤",
+            menus: [
+                
+            ]
         },
         {
             icon: WalletFilled,
             iconColor: "#fa746b",
-            text: "薪酬"
+            text: "薪酬",
+            menus: [
+                
+            ]
         },
         {
             icon: Coin,
             iconColor: "#fddb78",
-            text: "社保公积金"
+            text: "社保公积金",
+            menus: [
+                
+            ]
         },
         {
             icon: List,
             iconColor: "#fddb78",
-            text: "绩效"
+            text: "绩效",
+            menus: [
+                
+            ]
         },
         {
             icon: PhoneFilled,
             iconColor: "#fa746b",
-            text: "招聘"
+            text: "招聘",
+            menus: [
+                
+            ]
         },
         {
             icon: Promotion,
             iconColor: "#28d094",
-            text: "审批"
+            text: "审批",
+            menus: [
+                
+            ]
         },
         {
             icon: Platform,
             iconColor: "#6c76f4",
-            text: "会议室预定"
+            text: "会议室预定",
+            menus: [
+                
+            ]
         },
         {
             icon: Van,
             iconColor: "#2561ef",
-            text: "车辆"
+            text: "车辆",
+            menus: [
+                
+            ]
         },
         {
             icon: Tickets,
             iconColor: "#28d094",
-            text: "新闻"
+            text: "新闻",
+            menus: [
+                
+            ]
         },
         {
             icon: Memo,
             iconColor: "#2561ef",
-            text: "公告"
+            text: "公告",
+            menus: [
+                
+            ]
         },
         {
             icon: DocumentCopy,
             iconColor: "#fa746b",
-            text: "合同库"
+            text: "合同库",
+            menus: [
+                
+            ]
         },
         {
             icon: Management,
             iconColor: "#fddb78",
-            text: "文档库"
+            text: "文档库",
+            menus: [
+                
+            ]
         },
         {
             icon: Money,
             iconColor: "#6c76f4",
-            text: "资产"
+            text: "资产",
+            menus: [
+                
+            ]
         },
         {
             icon: Tools,
             iconColor: "#fddb78",
-            text: "系统设置"
+            text: "系统设置",
+            menus: [
+                
+            ]
         }
     ]
 
