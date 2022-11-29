@@ -35,4 +35,14 @@ const props = withDefaults(defineProps<Props>(), {
     width: 100%;
     height: 100%;
 }
+
+.menus-container :deep(.el-menu-item) {
+    min-width: 160px;
+    height: 40px;
+    line-height: 40px;
+    /* background-color: bisque; */
+    margin-top: 10px;
+    padding-left: 20px !important;
+    /* padding: 0px; */
+}
 </style>

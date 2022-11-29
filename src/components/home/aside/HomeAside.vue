@@ -35,7 +35,16 @@
 
 .aside-container {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 10px);
+}
+
+.el-menu {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    /* width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px; */
+    border: 0px;
 }
 
 </style>
