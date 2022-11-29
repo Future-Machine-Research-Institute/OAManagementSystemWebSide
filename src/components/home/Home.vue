@@ -20,33 +20,25 @@
   import HomeHead from './head/HomeHead.vue';
   import HomeAside from './aside/HomeAside.vue'
   import { useRouter } from 'vue-router';
-  import {Monitor, Document} from '@element-plus/icons-vue'
-  import {reactive } from 'vue'
+  import {onMounted, shallowRef} from 'vue'
 
-  let testArray = [
-    {
-      icon: Monitor,
-      text: '工作台',
-      path: '/home/index/work-bench',
-      children: []
-    },
-    {
-      icon: Document,
-      text: '日程待办',
-      path: '/home/index/schedule',
-      children: []
-    }
-  ]
+  let testArray = shallowRef([{
+    icon: null,
+    text: '',
+    path: '',
+    children: []
+  }])
 
   const router = useRouter()
 
-  router.replace('/home/index/work-bench')
-
   const clickOnAppItem = (menus: any[]) => {
     console.log(menus)
-    // testArray.value = menus
-    // testArray.push(...menus)
+    testArray.value = menus
   }
+
+  onMounted(() => {
+    
+  })
 
 </script>
 

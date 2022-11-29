@@ -2,7 +2,7 @@
     <div class="head-container">
         <vertical-button class="menu-button" :icon="Menu" :text-icon-padding="0"></vertical-button>
         <div class="head-title">OA办公后台管理系统</div>
-        <vertical-button class="index-button" text="首页" :icon="HomeFilled"></vertical-button>
+        <vertical-button class="index-button" @click="emit('clickOnAppItem', indexItemMenus)" text="首页" :icon="HomeFilled"></vertical-button>
         <vertical-button class="app-center-button" ref="appCenterButtonRef" text="应用中心" :icon="Grid"></vertical-button>
         <el-input class="search-input" placeholder="请输入关键字">
             <template #prefix>
@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-    import {Document, Menu, HomeFilled, Grid, Search, BellFilled, CaretBottom, Share, UserFilled, Checked, WalletFilled, Coin, List, PhoneFilled, Promotion, Platform, Van, Tickets, Memo, DocumentCopy, Management, Money, Tools} from '@element-plus/icons-vue'
+    import {Monitor, Document, Menu, HomeFilled, Grid, Search, BellFilled, CaretBottom, Share, UserFilled, Checked, WalletFilled, Coin, List, PhoneFilled, Promotion, Platform, Van, Tickets, Memo, DocumentCopy, Management, Money, Tools} from '@element-plus/icons-vue'
     import VerticalButton from '../../uitls/VerticalButton.vue';
     import { ref } from 'vue';
 
@@ -45,6 +45,21 @@
 
     const appCenterButtonRef = ref()
     const appCenterPopoverRef = ref()
+
+    const indexItemMenus = [
+        {
+            icon: Monitor,
+            text: '工作台',
+            path: '/home/index/work-bench',
+            children: []
+        },
+        {
+            icon: Document,
+            text: '日程待办',
+            path: '/home/index/schedule',
+            children: []
+        }
+    ]
 
     const appItemArray = [
         {
