@@ -39,11 +39,8 @@
 }
 
 .el-menu {
-    width: calc(100% - 40px);
-    margin-left: 20px;
-    /* width: calc(100% - 40px);
-    height: calc(100% - 40px);
-    margin: 20px; */
+    width: calc(100% - 20px);
+    margin-left: 10px;
     border: 0px;
 }
 

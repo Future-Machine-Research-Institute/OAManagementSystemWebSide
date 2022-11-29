@@ -36,13 +36,24 @@ const props = withDefaults(defineProps<Props>(), {
     height: 100%;
 }
 
+.menus-container :deep(.el-sub-menu__title) {
+    height: 35px;
+    line-height: 35px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
 .menus-container :deep(.el-menu-item) {
     min-width: 160px;
-    height: 40px;
-    line-height: 40px;
-    /* background-color: bisque; */
+    height: 35px;
+    line-height: 35px;
     margin-top: 10px;
     padding-left: 20px !important;
-    /* padding: 0px; */
+    border-radius: 5px;
+}
+
+.menus-container :deep(.el-menu-item.is-active) {
+    color: white;
+    background-color: #2561EF;
 }
 </style>
