@@ -1,6 +1,6 @@
 <template>
     <div class="aside-container">
-        <el-menu text-color="black" :default-active="props.defaultPath" active-text-color="green" :router="true" @select="handleSelect">
+        <el-menu text-color="black" ref="asideMenu" :default-active="router.currentRoute.value.path" active-text-color="green" :router="true" @select="handleSelect">
             <unlimited-menus :menu-items="props.menuItems"></unlimited-menus>
         </el-menu>
     </div>
@@ -8,20 +8,25 @@
 
 <script setup lang="ts">
     import UnlimitedMenus from '../../uitls/UnlimitedMenus.vue';
+    import {ref} from 'vue'
+    import { useRouter } from 'vue-router';
 
     export interface Props {
         menuItems: any[]
-        defaultPath: string
     }
 
+    const asideMenu = ref()
+    const router = useRouter()
+
     const props = withDefaults(defineProps<Props>(), {
-        menuItems: () => [],
-        //默认应该为menuItems能解析到的第一个页面路径
-        defaultPath: ''
+        menuItems: () => []
     })
 
-    const handleSelect = (index: any, indexPath: any) => {
-        console.log(index,indexPath)
+    const handleSelect = (index: any, indexPath: any, item: any, routeResult: any) => {
+        // console.log("index: ", index)
+        // console.log("indexPath: ", indexPath)
+        // console.log("item: ", item)
+        // console.log("routeResult: ", routeResult)
     }
 
 </script>

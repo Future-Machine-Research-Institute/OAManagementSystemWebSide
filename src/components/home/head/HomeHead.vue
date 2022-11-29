@@ -25,7 +25,7 @@
         </el-popover>
         <el-popover class="app-center-popover" ref="appCenterPopoverRef" :virtual-ref="appCenterButtonRef" trigger="click" virtual-triggering :show-arrow="false" width="546px">
             <el-space class="app-center-space" :size="10"  wrap>
-                <vertical-button class="app-item-button" v-for="item in appItemArray" @click="emit('clickOnAppItem', item.menus)" :text="item.text" :icon="item.icon" :icon-color="item.iconColor" :icon-size="25" :text-icon-padding="20"></vertical-button>
+                <vertical-button class="app-item-button" v-for="item in appItemArray" @click="appItemClick(item.menus)" :text="item.text" :icon="item.icon" :icon-color="item.iconColor" :icon-size="25" :text-icon-padding="20"></vertical-button>
             </el-space>
         </el-popover>
     </div>    
@@ -45,6 +45,11 @@
 
     const appCenterButtonRef = ref()
     const appCenterPopoverRef = ref()
+
+    const appItemClick = (menus: any[]) => {
+        emit('clickOnAppItem', menus)
+        appCenterPopoverRef.value.hide()
+    }
 
     const indexItemMenus = [
         {
@@ -277,6 +282,15 @@
             ]
         }
     ]
+
+    //首次进入主页时自动点击首页按钮进入首页
+    const indexItemClick = () => {
+        emit('clickOnAppItem', indexItemMenus)
+    }
+
+    defineExpose({
+        indexItemClick
+    })
 
 </script>
 

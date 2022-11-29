@@ -2,11 +2,11 @@
     <div class="common-layout">
       <el-container class="common-layout">
         <el-header class="header">
-          <home-head @click-on-app-item="clickOnAppItem"></home-head>
+          <home-head ref="homeHead" @click-on-app-item="clickOnAppItem"></home-head>
         </el-header>
         <el-container class="content">
             <el-aside class="aside" width="200px">
-              <home-aside :menu-items="testArray" :default-path="'/home/index/work-bench'"></home-aside>
+              <home-aside ref="homeAside" :menu-items="defaultMenus"></home-aside>
             </el-aside>
             <el-main>
               <router-view></router-view>
@@ -20,25 +20,43 @@
   import HomeHead from './head/HomeHead.vue';
   import HomeAside from './aside/HomeAside.vue'
   import { useRouter } from 'vue-router';
-  import {onMounted, shallowRef} from 'vue'
+  import {onMounted, shallowRef, ref} from 'vue'
 
-  let testArray = shallowRef([{
+  let defaultMenus = shallowRef([{
     icon: null,
     text: '',
     path: '',
     children: []
   }])
 
+  // let defaultPath = ref('')
+
+  const homeHead = ref()
+  const homeAside = ref()
+
   const router = useRouter()
 
   const clickOnAppItem = (menus: any[]) => {
-    console.log(menus)
-    testArray.value = menus
+    defaultMenus.value = menus
+    console.log('menus: ', defaultMenus.value)
+    // defaultPath.value = findFirstPath(menus)
+    // console.log('path: ', defaultPath.value)
+    router.replace(findFirstPath(menus))
   }
 
   onMounted(() => {
-    
+    console.log('onMounted')
+    homeHead.value.indexItemClick()
   })
+
+  const findFirstPath = (menus: any[]): string => {
+    let firstMenu = menus[0]
+    if(firstMenu.children.length === 0) {
+      return firstMenu.path
+    } else {
+      return findFirstPath(firstMenu.children)
+    }
+  }
 
 </script>
 
